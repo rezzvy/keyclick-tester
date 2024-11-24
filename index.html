@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Keyclick Tester - Test Your Keyboard and Mouse</title>
+    <meta
+      name="description"
+      content="Keyclick Tester is a web-based app for testing keyboards and mice. It detects any pressed input and shows which key is pressed."
+    />
+    <meta name="keywords" content="mouse, keyboard, testing, mice" />
+    <meta name="author" content="Rezzvy" />
+
+    <link rel="stylesheet" href="./lib/bootstrap-5.3.3-dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./css/main.css" />
+  </head>
+  <body>
+    <!-- App header: Displays the title and description -->
+    <header class="text-bg-dark py-2 py-lg-4 text-center">
+      <div class="costum-container p-2 p-lg-0">
+        <h1 class="h3 fw-bold">KEYCLICK TESTER</h1>
+        <p class="lead m-0">Web-based app to test keboard and mouse.</p>
+      </div>
+    </header>
+    <!-- Main content: Includes active events and keyboard/mouse visualizer -->
+    <main class="my-2 my-lg-4">
+      <!-- Active Events Section: Displays current input events (keyboard or mouse) -->
+      <section>
+        <div class="costum-container p-2 p-lg-0">
+          <h2 class="h4 mb-0">Events</h2>
+          <hr />
+
+          <div class="event-wrapper d-flex gap-2 overflow-auto">
+            <div class="event-item border p-2 rounded-2 text-center">
+              <div class="fs-4">R</div>
+              <div class="badge text-bg-primary">Keyboard</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Visualizer Section: Keyboard and mouse visual representation -->
+      <section class="bg-body-tertiary py-2 py-lg-4 my-2 my-lg-4">
+        <div class="costum-container p-2 p-lg-0">
+          <h2 class="h4 mb-0">Visualizer</h2>
+          <p class="alert alert-dark rounded-0 m-0 my-2">Some events (keys) aren't visualized. Please check the Active Events section to see them.</p>
+
+          <div class="visualizer-overflow">
+            <!-- Keyboard Container: Displays keyboard layout and keys -->
+            <div class="keyboard-visual text-bg-dark p-4 mb-2">
+              <div class="key-wrapper gap-2 grow mb-2">
+                <div class="wrap">
+                  <div class="key-item">Esc</div>
+                </div>
+
+                <div class="wrap">
+                  <div class="key-item">F1</div>
+                </div>
+
+                <div class="wrap">
+                  <div class="key-item">F2</div>
+                </div>
+
+                <div class="wrap">
+                  <div class="key-item">F3</div>
+                </div>
+
+                <div class="wrap">
+                  <div class="key-item">F4</div>
+                </div>
+
+                <div class="wrap">
+                  <div class="key-item">F5</div>
+                </div>
+
+                <div class="wrap">
+                  <div class="key-item">F6</div>
+                </div>
+
+                <div class="wrap">
+                  <div class="key-item">F7</div>
+                </div>
+
+                <div class="wrap">
+                  <div class="key-item">F8</div>
+                </div>
+
+                <div class="wrap">
+                  <div class="key-item">F9</div>
+                </div>
+
+                <div class="wrap">
+                  <div class="key-item">F10</div>
+                </div>
+
+                <div class="wrap">
+                  <div class="key-item">F11</div>
+                </div>
+
+                <div class="wrap">
+                  <div class="key-item">F12</div>
+                </div>
+              </div>
+              <div class="key-wrapper gap-2 basis mb-2">
+                <div class="wrap">
+                  <div class="key-item">`</div>
+                </div>
+
+                <div class="wrap">
+                  <div class="key-item">1</div>
+                </div>
+
+                <div class="wrap">
+                  <div class="key-item">2</div>
+                </div>
+
+                <div class="wrap">
+                  <div class="key-item">3</div>
+                </div>
+
+                <div class="wrap">
+                  <div class="key-item">4</div>
+                </div>
+
+                <div class="wrap">
+                  <div class="key-item">5</div>
+                </div>
+
+                <div class="wrap">
+                  <div class="key-item">6</div>
+                </div>
+
+                <div class="wrap">
+                  <div class="key-item">7</div>
+                </div>
+
+                <div class="wrap">
+                  <div class="key-item">8</div>
+                </div>
+
+                <div class="wrap">
+                  <div class="key-item">9</div>
+                </div>
+
+                <div class="wrap">
+                  <div class="key-item">0</div>
+                </div>
+
+                <div class="wrap">
+                  <div class="key-item">-</div>
+                </div>
+
+                <div class="wrap">
+                  <div class="key-item">=</div>
+                </div>
+
+                <div class="wrap grow">
+                  <div class="key-item">Backspace</div>
+                </div>
+              </div>
+              <div class="key-wrapper gap-2 basis mb-2">
+                <div class="wrap grow">
+                  <div class="key-item">Tab</div>
+                </div>
+
+                <div class="wrap">
+                  <div class="key-item">Q</div>
+                </div>
+
+                <div class="wrap">
+                  <div class="key-item">W</div>
+                </div>
+
+                <div class="wrap">
+                  <div class="key-item">E</div>
+                </div>
+
+                <div class="wrap">
+                  <div class="key-item">R</div>
+                </div>
+
+                <div class="wrap">
+                  <div class="key-item">T</div>
+                </div>
+
+                <div class="wrap">
+                  <div class="key-item">Y</div>
+                </div>
+
+                <div class="wrap">
+                  <div class="key-item">U</div>
+                </div>
+
+                <div class="wrap">
+                  <div class="key-item">I</div>
+                </div>
+
+                <div class="wrap">
+                  <div class="key-item">O</div>
+                </div>
+
+                <div class="wrap">
+                  <div class="key-item">P</div>
+                </div>
+
+                <div class="wrap">
+                  <div class="key-item">[</div>
+                </div>
+
+                <div class="wrap">
+                  <div class="key-item">]</div>
+                </div>
+
+                <div class="wrap">
+                  <div class="key-item">\</div>
+                </div>
+              </div>
+              <div class="key-wrapper gap-2 basis mb-2">
+                <div class="wrap grow">
+                  <div class="key-item">CapsLock</div>
+                </div>
+                <div class="wrap">
+                  <div class="key-item">A</div>
+                </div>
+                <div class="wrap">
+                  <div class="key-item">S</div>
+                </div>
+                <div class="wrap">
+                  <div class="key-item">D</div>
+                </div>
+                <div class="wrap">
+                  <div class="key-item">F</div>
+                </div>
+                <div class="wrap">
+                  <div class="key-item">G</div>
+                </div>
+                <div class="wrap">
+                  <div class="key-item">H</div>
+                </div>
+                <div class="wrap">
+                  <div class="key-item">J</div>
+                </div>
+                <div class="wrap">
+                  <div class="key-item">K</div>
+                </div>
+                <div class="wrap">
+                  <div class="key-item">L</div>
+                </div>
+                <div class="wrap">
+                  <div class="key-item">;</div>
+                </div>
+                <div class="wrap">
+                  <div class="key-item">'</div>
+                </div>
+                <div class="wrap grow">
+                  <div class="key-item">Enter</div>
+                </div>
+              </div>
+              <div class="key-wrapper gap-2 basis mb-2">
+                <div class="wrap grow">
+                  <div class="key-item">Shift</div>
+                </div>
+
+                <div class="wrap">
+                  <div class="key-item">Z</div>
+                </div>
+
+                <div class="wrap">
+                  <div class="key-item">X</div>
+                </div>
+
+                <div class="wrap">
+                  <div class="key-item">C</div>
+                </div>
+
+                <div class="wrap">
+                  <div class="key-item">V</div>
+                </div>
+
+                <div class="wrap">
+                  <div class="key-item">B</div>
+                </div>
+
+                <div class="wrap">
+                  <div class="key-item">N</div>
+                </div>
+
+                <div class="wrap">
+                  <div class="key-item">M</div>
+                </div>
+
+                <div class="wrap">
+                  <div class="key-item">,</div>
+                </div>
+
+                <div class="wrap">
+                  <div class="key-item">.</div>
+                </div>
+
+                <div class="wrap">
+                  <div class="key-item">/</div>
+                </div>
+
+                <div class="wrap grow">
+                  <div class="key-item">Shift</div>
+                </div>
+              </div>
+              <div class="key-wrapper gap-2 basis">
+                <div class="wrap">
+                  <div class="key-item">Ctrl</div>
+                </div>
+                <div class="wrap">
+                  <div class="key-item">Fn</div>
+                </div>
+                <div class="wrap">
+                  <div class="key-item">Meta</div>
+                </div>
+                <div class="wrap">
+                  <div class="key-item">Alt</div>
+                </div>
+                <div class="wrap grow">
+                  <div class="key-item">Spacebar</div>
+                </div>
+                <div class="wrap">
+                  <div class="key-item">Alt</div>
+                </div>
+                <div class="wrap">
+                  <div class="key-item">Ctx</div>
+                </div>
+                <div class="wrap">
+                  <div class="key-item">Ctrl</div>
+                </div>
+
+                <div class="arrow wrap d-flex gap-2">
+                  <div class="key-item">Up</div>
+                  <div class="key-item">Btm</div>
+                  <div class="key-item">Left</div>
+                  <div class="key-item">Right</div>
+                </div>
+              </div>
+            </div>
+            <!-- Mouse Container: Displays mouse button states -->
+            <div class="mouse-visual d-flex justify-content-center align-items-center gap-2">
+              <div class="mouse-key">Left Click</div>
+              <div class="mouse-key middle"></div>
+              <div class="mouse-key">Right Click</div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Instructions section with steps explaining how to use the application -->
+      <section>
+        <div class="costum-container p-2 p-lg-0">
+          <h2 class="h4">How to use?</h2>
+
+          <div class="row row-cols-1 row-cols-md-2 g-0">
+            <div class="col">
+              <h3 class="h5">First Step</h3>
+              <p>Click anywhere on the page to ensure that when there's input, the event listener can detect it.</p>
+            </div>
+            <div class="col">
+              <h3 class="h5">Last Step</h3>
+              <p>Next, monitor the presses to test the keyboard or mouse and detect which key is pressed.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- Footer: Includes author attribution and link -->
+    <footer class="pb-2 pb-lg-4 text-center">
+      <div class="costum-container p-2 p-lg-0">
+        <p class="m-0">
+          Made with lots of love by
+          <a href="https://github.com/rezzvy" class="fw-bold link-dark">Muhammad Reza Fahlevi</a>
+        </p>
+      </div>
+    </footer>
+
+    <script src="./lib/bootstrap-5.3.3-dist/js/bootstrap.min.js"></script>
+  </body>
+</html>

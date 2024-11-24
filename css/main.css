@@ -1,0 +1,75 @@
+/* General styles */
+img {
+  max-width: 100%;
+}
+
+/* Costum container */
+.costum-container {
+  max-width: 1000px;
+  margin: auto;
+}
+
+/* Visualizer overflow */
+.visualizer-overflow {
+  overflow: auto;
+  width: 100%;
+}
+
+.visualizer-overflow > div {
+  width: 1000px;
+}
+
+/* Key wrapper */
+.key-wrapper {
+  display: flex;
+}
+
+.key-wrapper .wrap {
+  padding: 0.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.key-wrapper .wrap .key-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Key wrapper flex properties */
+.key-wrapper .wrap.grow,
+.key-wrapper.grow .wrap {
+  flex-grow: 1;
+}
+
+.key-wrapper.basis .wrap {
+  flex-basis: 60px;
+  height: 40px;
+}
+
+/* Event wrapper */
+.event-wrapper .event-item {
+  flex-shrink: 0;
+  flex-basis: 150px;
+}
+
+/* Arrow key item */
+.arrow .key-item {
+  width: auto !important;
+}
+
+/* Mouse key */
+.mouse-key {
+  flex-basis: 200px;
+  padding: 0.5rem;
+  border: 1px solid black;
+  border-radius: 999px;
+  text-align: center;
+}
+
+.mouse-key.middle {
+  flex-basis: 50px;
+  height: 80px;
+}
