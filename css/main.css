@@ -50,6 +50,14 @@ img {
 }
 
 /* Event wrapper */
+.event-wrapper {
+  min-height: 100px;
+}
+
+.event-wrapper.none::after {
+  content: "There is no active event at the moment!";
+}
+
 .event-wrapper .event-item {
   flex-shrink: 0;
   flex-basis: 150px;
