@@ -1,107 +1,45 @@
-const activeEventContainer = document.querySelector(".event-wrapper");
+import * as app from "./function.js";
 
+// Tracks currently active events (keyboard or mouse)
 const activeEvents = [];
 
-function generateActiveEventItem(key, source) {
-  const inputtedKey = key === " " ? "Space" : key;
-  return `
-  <div class="event-item border p-2 rounded-2 text-center">
-    <div class="fs-4">${inputtedKey}</div>
-    <div class="badge text-bg-primary">${source}</div>
-  </div>`;
-}
-
+// Keyboard key press and release handlers
 window.addEventListener("keydown", (e) => {
   e.preventDefault();
-  activeEventContainer.classList.remove("none");
   const key = e.key === "\\" ? "Backslash" : e.key;
-  const el = document.querySelectorAll(`[data-key="${key.toLocaleLowerCase()}"]`);
 
-  if (!activeEvents.includes(e.key.toUpperCase())) {
-    activeEvents.push(e.key.toUpperCase());
-    activeEventContainer.innerHTML += generateActiveEventItem(e.key.toUpperCase(), "Keyboard");
-  }
-
-  if (el.length > 1) {
-    el.forEach((element) => {
-      element.classList.add("text-bg-light");
-    });
-  } else if (el.length === 1) {
-    el[0].classList.add("text-bg-light");
+  if (!activeEvents.includes(key)) {
+    activeEvents.push(key);
+    app.highlightActiveKeyboardKey(true, key);
+    app.updateActiveEventContainer(app.generateActiveEventElement(key, "Keyboard"));
   }
 });
 
 window.addEventListener("keyup", (e) => {
   e.preventDefault();
-
   const key = e.key === "\\" ? "Backslash" : e.key;
-  const el = document.querySelectorAll(`[data-key="${key.toLocaleLowerCase()}"]`);
 
-  activeEventContainer.classList.add("none");
-  activeEventContainer.innerHTML = "";
+  app.highlightActiveKeyboardKey(false, key);
+  app.clearActiveEventContainer();
   activeEvents.length = 0;
-
-  if (el.length > 1) {
-    el.forEach((element) => {
-      element.classList.remove("text-bg-light");
-    });
-  } else if (el.length === 1) {
-    el[0].classList.remove("text-bg-light");
-  }
 });
 
+// Mouse button press and release handlers
 window.addEventListener("mousedown", (e) => {
-  activeEventContainer.classList.remove("none");
-  switch (e.button) {
-    case 0:
-      if (!activeEvents.includes("MouseLeft")) {
-        activeEvents.push("MouseLeft");
-        activeEventContainer.innerHTML += generateActiveEventItem("MouseLeft", "Mouse");
-      }
+  const map = { 0: "Left", 1: "Middle", 2: "Right" };
 
-      document.querySelector(".mouse-key.left").classList.add("text-bg-dark");
-      break;
-    case 1:
-      if (!activeEvents.includes("MouseMiddle")) {
-        activeEvents.push("MouseMiddle");
-        activeEventContainer.innerHTML += generateActiveEventItem("MouseMiddle", "Mouse");
-      }
-
-      document.querySelector(".mouse-key.middle").classList.add("text-bg-dark");
-
-      break;
-    case 2:
-      if (!activeEvents.includes("MouseRight")) {
-        activeEvents.push("MouseRight");
-        activeEventContainer.innerHTML += generateActiveEventItem("MouseRight", "Mouse");
-      }
-
-      document.querySelector(".mouse-key.right").classList.add("text-bg-dark");
-
-      break;
-    default:
+  if (!activeEvents.includes(map[e.button])) {
+    activeEvents.push(map[e.button]);
+    app.highlightActiveMouse(true, e.button);
+    app.updateActiveEventContainer(app.generateActiveEventElement(map[e.button], "Mouse"));
   }
 });
 
 window.addEventListener("mouseup", (e) => {
-  switch (e.button) {
-    case 0:
-      document.querySelector(".mouse-key.left").classList.remove("text-bg-dark");
-      break;
-    case 1:
-      document.querySelector(".mouse-key.middle").classList.remove("text-bg-dark");
-      break;
-    case 2:
-      document.querySelector(".mouse-key.right").classList.remove("text-bg-dark");
-      break;
-    default:
-  }
-
-  activeEventContainer.classList.add("none");
-  activeEventContainer.innerHTML = "";
+  app.highlightActiveMouse(false, e.button);
+  app.clearActiveEventContainer();
   activeEvents.length = 0;
 });
 
-window.addEventListener("contextmenu", (e) => {
-  e.preventDefault();
-});
+// Prevents the context menu from opening on right-click
+window.addEventListener("contextmenu", (e) => e.preventDefault());
