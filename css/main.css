@@ -63,11 +63,6 @@ img {
   flex-basis: 150px;
 }
 
-/* Arrow key item */
-.arrow .key-item {
-  width: auto !important;
-}
-
 /* Mouse key */
 .mouse-key {
   flex-basis: 200px;
